@@ -6,6 +6,24 @@ than the functions themselves.
 """
 
 
+def create_dict():
+	"""
+	Create a new dictionary.
+
+	Example from: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
+	>>> a = dict(one=1, two=2, three=3)
+	>>> b = {'one': 1, 'two': 2, 'three': 3}
+	>>> c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+	>>> d = dict([('two', 2), ('one', 1), ('three', 3)])
+	>>> e = dict({'three': 3, 'one': 1, 'two': 2})
+	>>> a == b == c == d == e
+	True
+	"""
+
+	return dict()
+
+
 def copy_dict(other_dict):
 	"""
 	Returns a copy of the dictionary, separate from the original.
