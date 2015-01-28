@@ -15,7 +15,7 @@ def copy_dict(other_dict):
 	If you delete a key in the original, it will not change the copy.
 
 	>>> d1 = dict(a=1, b=2)
-	>>> d2 = dict(**d2)
+	>>> d2 = dict(**d1)
 	>>> del d1['a']
 	>>> 'a' in d1
 	False
@@ -24,6 +24,15 @@ def copy_dict(other_dict):
 
 	If any of the top-level values are mutable (list, dict) then changes
 	to the original will appear in the copy.
+
+	>>> d1 = dict(a=[1, 2], b=[3, 4])
+	>>> d2 = dict(**d1)
+	>>> d1['a'].pop()
+	2
+	>>> d1['a']
+	[1]
+	>>> d1['a'] == d2['a']
+	True
 
 	Tested in Python 3.4.
 	"""
