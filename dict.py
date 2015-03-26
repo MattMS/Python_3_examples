@@ -57,3 +57,29 @@ def copy_dict(other_dict):
 
 	new_dict = dict(**other_dict)
 	return new_dict
+
+
+def update_dict(original, other):
+	"""
+	Update the original dict with values from the other.
+
+	If you delete a key in the other, it will not change the original.
+
+	>>> d1 = dict(a=1)
+	>>> d2 = dict(b=2)
+	>>> d1
+	{'a': 1}
+	>>> d2
+	{'b': 2}
+
+	>>> d1.update(d2)
+	>>> d1
+	{'a': 1, 'b': 2}
+	>>> d2
+	{'b': 2}
+
+	Tested in Python 3.4.
+	"""
+
+	original.update(other)
+	return original
